@@ -1,5 +1,6 @@
 class Contact {
     constructor(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email) {
+
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Address = Address;
@@ -28,8 +29,25 @@ class AddressBook {
 
 
 const addressbook=new AddressBook();
-const Details1 = new Contact("A", "A", "A", "A", "A", "A", "9987887678", "a@gmail.com");
-const Detaisl2 = new Contact("B", "B", "B", "B", "B", "B", "6578988712", "b@gmail.com");
+const Details1 = new Contact(
+    FirstName="A",
+    LastName= "A",
+    Address= "A",
+    City= "A",
+    State= "A",
+    Zip ="A",
+    PhoneNumber= "9987887678",
+    Email= "a@gmail.com");
+const Detaisl2 = new Contact(
+    FirstName="B",
+    LastName= "B",
+    Address= "B",
+    City= "B",
+    State= "B",
+    Zip= "B",
+    PhoneNumber= "6578988712",
+    Email= "b@gmail.com");
+
 addressbook.addNewContact(Details1);
 addressbook.addNewContact(Detaisl2);
 addressbook.displayContactDetails();
