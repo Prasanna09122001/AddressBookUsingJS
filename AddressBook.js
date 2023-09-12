@@ -48,12 +48,11 @@ const Details2 = new Contact(
     State= "TamilNadu",
     Zip= "500001",
     PhoneNumber= "6578988712",
-    Email= "Ghejd@gmail.com");
+    Email= "ghejd@gmail.com");
 
    function validateName(Details) 
     {
-        console.log(Details.FirstName+""+Details.LastName+""+Details.Address+""+Details.City+""+Details.State+""+Details.Zip+""+Details.PhoneNumber+""+Details.Email);
-        if (!/^[A-Z][a-zA-Z]{2,}$/.test(Details.FirstName)) {
+        if(!/^[A-Z][a-zA-Z]{2,}$/.test(Details.FirstName)) {
             throw new Error("Write the First Name Correctly");
         }
         else if(!/^[A-Z][a-zA-Z]{2,}$/.test(Details.LastName)) {
@@ -79,9 +78,9 @@ const Details2 = new Contact(
         {
             throw new Error("Write the Phone Correctly");
         }
-        else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(Details.Email))
+        else if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(Details.Email))
         {
-            throw new error("Write the Email Correctly")
+            throw new Error("Write the Email Correctly")
         }
         else 
         {
@@ -92,5 +91,16 @@ const Details2 = new Contact(
     
 validateName(Details1);
 validateName(Details2)
-addressbook.displayContactDetails();
 
+const Details3 = new Contact(
+    FirstName="John",
+    LastName= "Peter",
+    Address= "Street2",
+    City= "Chennai",
+    State= "TamilNadu",
+    Zip= "500451",
+    PhoneNumber= "6578912344",
+    Email= "john@gmail.com");
+validateName(Details3);
+
+addressbook.displayContactDetails();
