@@ -18,15 +18,34 @@ class AddressBook {
     }
     
     addNewContact(contact) {
+    validateDetails(contact);
     this.contacts.push(contact);
     console.log("Contact Added " + contact.FirstName);}
 
     displayContactDetails() {
     this.contacts.forEach(element => {
-        console.log("Full Name -->"+element.FirstName + element.LastName+" Phone Number -->"+element.PhoneNumber);
+        console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
     });}
+
+    EditContactDetails(contact){
+        validateDetails(contact);
+        this.contacts.forEach(element=>{
+            if(contact.FirstName == element.FirstName)
+            {
+                element.LastName=contact.LastName;
+                element.Address=contact.Address;
+                element.City=contact.City;
+                element.State=contact.State;
+                element.Zip=contact.Zip;
+                element.PhoneNumber=contact.PhoneNumber;
+                element.Email=contact.Email;
+                console.log("Address Book Edited Successfully");
+            }
+
+        });
+    }
 }
-function validateName(Details) 
+function validateDetails(Details) 
     {
         if(!/^[A-Z][a-zA-Z]{2,}$/.test(Details.FirstName)) {
             throw new Error("Write the First Name Correctly");
@@ -58,10 +77,9 @@ function validateName(Details)
         {
             throw new Error("Write the Email Correctly")
         }
-        else 
-        {
-             addressbook.addNewContact(Details);
-        } 
+        else{
+            console.log("Details Validate Successfully");
+        }
     }
 
 
@@ -85,11 +103,8 @@ const Details2 = new Contact(
     PhoneNumber= "6578988712",
     Email= "ghejd@gmail.com");
 
-//addressbook.addNewContact(Details1);
-//addressbook.addNewContact(Details2);    // Creating a new AddressBook and Add Contact in it.
-
-validateName(Details1);       // Validating and Adding the contact to AddressBook.
-validateName(Details2)
+addressbook.addNewContact(Details1);
+addressbook.addNewContact(Details2);    // Creating a new AddressBook and Add Contact in it.
 
 const Details3 = new Contact(
     FirstName="John",
@@ -100,7 +115,18 @@ const Details3 = new Contact(
     Zip= "500451",
     PhoneNumber= "6578912344",
     Email= "john@gmail.com");
-validateName(Details3);        // Adding a New Contact to addressbook.
+addressbook.addNewContact(Details3);        // Adding a New Contact to addressbook.
+
+const UpdatedContact = new Contact(
+    FirstName="John",
+    LastName= "Wick",
+    Address= "Street1",
+    City= "Chennai",
+    State= "TamilNadu",
+    Zip= "500451",
+    PhoneNumber= "6578912388",
+    Email= "john@gmail.com");
+addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
 
 addressbook.displayContactDetails();  //Display the contact in the AddressBook.
 
