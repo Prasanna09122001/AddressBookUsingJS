@@ -73,19 +73,21 @@ class AddressBook {
         return count+1},0);
         console.log("Total Number of Contact in the Addressbook "+count);
     }
-    DetailsByCity(city)
+    DetailsByCity(city,name)
     {
         const cityDetails= this.contacts.filter((element)=> element.City == city);
-        console.log("The Persons in the Given City are");
-        cityDetails.forEach(element => {
+        const PersoninCity= cityDetails.filter((element) => element.FirstName == name);
+        console.log("The Person Details in the Given City are");
+        PersoninCity.forEach(element => {
             console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
         })
     }
-    DetailsByState(State)
+    DetailsByState(State,name)
     {
         const stateDetails = this.contacts.filter((element)=> element.State == State);
-        console.log("The Persons in the given State are");
-        stateDetails.forEach(element => {
+        const PersoninState= stateDetails.filter((element)=>element.FirstName == name);
+        console.log("The Person Details in the given State are");
+        PersoninState.forEach(element => {
             console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
         })
     }
@@ -180,6 +182,6 @@ const UpdatedContact = new Contact(
 
 //addressbook.duplicateContact(Details3);        // Find Duplicate element in the AddressBook
 
-addressbook.DetailsByCity("Chennai");     //Person Details in a Particular City
-addressbook.DetailsByState("TamilNadu");  // Person Details in a Particular State
+addressbook.DetailsByCity("Chennai","Abcd");     //Person Details in a Particular City
+addressbook.DetailsByState("TamilNadu","John");  // Person Details in a Particular State
 
