@@ -26,31 +26,7 @@ class AddressBook {
         console.log("Full Name -->"+element.FirstName + element.LastName+" Phone Number -->"+element.PhoneNumber);
     });}
 }
-
-
-
-const addressbook=new AddressBook();
-const Details1 = new Contact(
-    FirstName="Abcd",
-    LastName= "Zedf",
-    Address= "Street1",
-    City= "Chennai",
-    State= "TamilNadu",
-    Zip ="500001",
-    PhoneNumber= "9987887678",
-    Email= "abcd@gmail.com");
-    //validateName(FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email);
-const Details2 = new Contact(
-    FirstName="Ghejd",
-    LastName= "Hjkil",
-    Address= "Street1",
-    City= "Chennai",
-    State= "TamilNadu",
-    Zip= "500001",
-    PhoneNumber= "6578988712",
-    Email= "ghejd@gmail.com");
-
-   function validateName(Details) 
+function validateName(Details) 
     {
         if(!/^[A-Z][a-zA-Z]{2,}$/.test(Details.FirstName)) {
             throw new Error("Write the First Name Correctly");
@@ -84,12 +60,35 @@ const Details2 = new Contact(
         }
         else 
         {
-            addressbook.addNewContact(Details);
-        }
+             addressbook.addNewContact(Details);
+        } 
     }
-    
-    
-validateName(Details1);
+
+
+const addressbook=new AddressBook();
+const Details1 = new Contact(
+    FirstName="Abcd",
+    LastName= "Zedf",
+    Address= "Street1",
+    City= "Chennai",
+    State= "TamilNadu",
+    Zip ="500001",
+    PhoneNumber= "9987887678",
+    Email= "abcd@gmail.com");
+const Details2 = new Contact(
+    FirstName="Ghejd",
+    LastName= "Hjkil",
+    Address= "Street1",
+    City= "Chennai",
+    State= "TamilNadu",
+    Zip= "500001",
+    PhoneNumber= "6578988712",
+    Email= "ghejd@gmail.com");
+
+addressbook.addNewContact(Details1);
+addressbook.addNewContact(Details2);
+
+validateName(Details1);       // Validating and Adding the contact to AddressBook
 validateName(Details2)
 
 const Details3 = new Contact(
@@ -101,6 +100,7 @@ const Details3 = new Contact(
     Zip= "500451",
     PhoneNumber= "6578912344",
     Email= "john@gmail.com");
-validateName(Details3);
+validateName(Details3);        // Adding a New Contact to addressbook
 
-addressbook.displayContactDetails();
+addressbook.displayContactDetails();  
+
