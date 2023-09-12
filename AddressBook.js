@@ -85,10 +85,10 @@ const Details2 = new Contact(
     PhoneNumber= "6578988712",
     Email= "ghejd@gmail.com");
 
-addressbook.addNewContact(Details1);
-addressbook.addNewContact(Details2);
+//addressbook.addNewContact(Details1);
+//addressbook.addNewContact(Details2);    // Creating a new AddressBook and Add Contact in it.
 
-validateName(Details1);       // Validating and Adding the contact to AddressBook
+validateName(Details1);       // Validating and Adding the contact to AddressBook.
 validateName(Details2)
 
 const Details3 = new Contact(
@@ -100,7 +100,7 @@ const Details3 = new Contact(
     Zip= "500451",
     PhoneNumber= "6578912344",
     Email= "john@gmail.com");
-validateName(Details3);        // Adding a New Contact to addressbook
+validateName(Details3);        // Adding a New Contact to addressbook.
 
-addressbook.displayContactDetails();  
+addressbook.displayContactDetails();  //Display the contact in the AddressBook.
 
