@@ -14,7 +14,8 @@ class Contact {
 
 class AddressBook {
     constructor() {
-        this.contacts = [];}
+        this.contacts = [];
+    }
     
     addNewContact(contact) {
     this.contacts.push(contact);
@@ -30,25 +31,66 @@ class AddressBook {
 
 const addressbook=new AddressBook();
 const Details1 = new Contact(
-    FirstName="A",
-    LastName= "A",
-    Address= "A",
-    City= "A",
-    State= "A",
-    Zip ="A",
+    FirstName="Abcd",
+    LastName= "Zedf",
+    Address= "Street1",
+    City= "Chennai",
+    State= "TamilNadu",
+    Zip ="500001",
     PhoneNumber= "9987887678",
-    Email= "a@gmail.com");
-const Detaisl2 = new Contact(
-    FirstName="B",
-    LastName= "B",
-    Address= "B",
-    City= "B",
-    State= "B",
-    Zip= "B",
+    Email= "abcd@gmail.com");
+    //validateName(FirstName,LastName,Address,City,State,Zip,PhoneNumber,Email);
+const Details2 = new Contact(
+    FirstName="Ghejd",
+    LastName= "Hjkil",
+    Address= "Street1",
+    City= "Chennai",
+    State= "TamilNadu",
+    Zip= "500001",
     PhoneNumber= "6578988712",
-    Email= "b@gmail.com");
+    Email= "Ghejd@gmail.com");
 
-addressbook.addNewContact(Details1);
-addressbook.addNewContact(Detaisl2);
+   function validateName(Details) 
+    {
+        console.log(Details.FirstName+""+Details.LastName+""+Details.Address+""+Details.City+""+Details.State+""+Details.Zip+""+Details.PhoneNumber+""+Details.Email);
+        if (!/^[A-Z][a-zA-Z]{2,}$/.test(Details.FirstName)) {
+            throw new Error("Write the First Name Correctly");
+        }
+        else if(!/^[A-Z][a-zA-Z]{2,}$/.test(Details.LastName)) {
+            throw new Error("Write the Last Name Correctly");
+        }
+        else if(!/^[0-9a-zA-Z]{4,}$/.test(Details.Address))
+        {
+            throw new Error("Write the Address Correctly");
+        }
+        else if(!/^[a-zA-Z]{4,}$/.test(Details.City))
+        {
+            throw new Error("Write the City Correctly");
+        }
+        else if(!/^[0-9a-zA-Z]{4,}$/.test(Details.State))
+        {
+            throw new Error("Write the State Correctly");
+        }
+        else if(!/^[0-9]{6}$/.test(Details.Zip))
+        {
+            throw new Error("Write the Zip Correctly");
+        }
+        else if(!/^[0-9]{10}$/.test(Details.PhoneNumber))
+        {
+            throw new Error("Write the Phone Correctly");
+        }
+        else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(Details.Email))
+        {
+            throw new error("Write the Email Correctly")
+        }
+        else 
+        {
+            addressbook.addNewContact(Details);
+        }
+    }
+    
+    
+validateName(Details1);
+validateName(Details2)
 addressbook.displayContactDetails();
 
