@@ -22,6 +22,17 @@ class AddressBook {
     this.contacts.push(contact);
     console.log("Contact Added " + contact.FirstName);}
 
+    duplicateContact(contact)
+    {
+        if(this.contacts.some((element)=> element.FirstName == contact.FirstName))
+        {
+            console.log("Contact is Already Existing");
+        }
+        else{
+            this.addNewContact(contact)
+        }
+    }
+    
     displayContactDetails() {
     this.contacts.forEach(element => {
         console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
@@ -50,7 +61,7 @@ class AddressBook {
             {
                if(name == element.FirstName)
                {
-                this.contacts.splice(a,1);
+                this.contacts.splice(a,1);       
                 console.log("Contact Deleted Successfully");
                }
                a++;
@@ -136,7 +147,7 @@ const Details3 = new Contact(
     Email= "john@gmail.com");
 addressbook.addNewContact(Details3);        // Adding a New Contact to addressbook.
 
-/*const UpdatedContact = new Contact(
+const UpdatedContact = new Contact(
     FirstName="John",
     LastName= "Wick",
     Address= "Street1",
@@ -146,9 +157,9 @@ addressbook.addNewContact(Details3);        // Adding a New Contact to addressbo
     PhoneNumber= "6578912388",
     Email= "john@gmail.com");
 addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
-*/
 
-addressbook.DeleteContactDetails("Ghejd");       // Delete The Contact in the AddressBook.
+//addressbook.DeleteContactDetails("Ghejd");       // Delete The Contact in the AddressBook.
 addressbook.displayContactDetails();  //Display the contact in the AddressBook.
 addressbook.ContactCount();           //Count the number
 
+addressbook.duplicateContact(Details3);        // Find Duplicate element in the AddressBook
