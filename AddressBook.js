@@ -44,6 +44,17 @@ class AddressBook {
 
         });
     }
+    DeleteContactDetails(name){
+        this.contacts.forEach(element=>
+            {
+               if(name == element.FirstName)
+               {
+                this.contacts.pop(element);
+                console.log("Contact Deleted Successfully");
+               }
+            });
+    }
+
 }
 function validateDetails(Details) 
     {
@@ -117,7 +128,7 @@ const Details3 = new Contact(
     Email= "john@gmail.com");
 addressbook.addNewContact(Details3);        // Adding a New Contact to addressbook.
 
-const UpdatedContact = new Contact(
+/*const UpdatedContact = new Contact(
     FirstName="John",
     LastName= "Wick",
     Address= "Street1",
@@ -127,6 +138,9 @@ const UpdatedContact = new Contact(
     PhoneNumber= "6578912388",
     Email= "john@gmail.com");
 addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
+*/
 
+addressbook.DeleteContactDetails("John");       // Delete The Contact in the AddressBook.
 addressbook.displayContactDetails();  //Display the contact in the AddressBook.
+
 
