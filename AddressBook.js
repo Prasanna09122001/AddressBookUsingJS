@@ -73,6 +73,22 @@ class AddressBook {
         return count+1},0);
         console.log("Total Number of Contact in the Addressbook "+count);
     }
+    DetailsByCity(city)
+    {
+        const cityDetails= this.contacts.filter((element)=> element.City == city);
+        console.log("The Persons in the Given City are");
+        cityDetails.forEach(element => {
+            console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
+        })
+    }
+    DetailsByState(State)
+    {
+        const stateDetails = this.contacts.filter((element)=> element.State == State);
+        console.log("The Persons in the given State are");
+        stateDetails.forEach(element => {
+            console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
+        })
+    }
 
 }
 function validateDetails(Details) 
@@ -119,7 +135,7 @@ const Details1 = new Contact(
     LastName= "Zedf",
     Address= "Street1",
     City= "Chennai",
-    State= "TamilNadu",
+    State= "Karnataka",
     Zip ="500001",
     PhoneNumber= "9987887678",
     Email= "abcd@gmail.com");
@@ -151,15 +167,19 @@ const UpdatedContact = new Contact(
     FirstName="John",
     LastName= "Wick",
     Address= "Street1",
-    City= "Chennai",
+    City= "Coimbatore",
     State= "TamilNadu",
     Zip= "500451",
     PhoneNumber= "6578912388",
     Email= "john@gmail.com");
-addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
+//addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
 
 //addressbook.DeleteContactDetails("Ghejd");       // Delete The Contact in the AddressBook.
-addressbook.displayContactDetails();  //Display the contact in the AddressBook.
-addressbook.ContactCount();           //Count the number
+//addressbook.displayContactDetails();  //Display the contact in the AddressBook.
+//addressbook.ContactCount();           //Count the number
 
-addressbook.duplicateContact(Details3);        // Find Duplicate element in the AddressBook
+//addressbook.duplicateContact(Details3);        // Find Duplicate element in the AddressBook
+
+addressbook.DetailsByCity("Chennai");     //Person Details in a Particular City
+addressbook.DetailsByState("TamilNadu");  // Person Details in a Particular State
+
