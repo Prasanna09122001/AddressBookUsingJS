@@ -45,14 +45,22 @@ class AddressBook {
         });
     }
     DeleteContactDetails(name){
+        var a=0;
         this.contacts.forEach(element=>
             {
                if(name == element.FirstName)
                {
-                this.contacts.pop(element);
+                this.contacts.splice(a,1);
                 console.log("Contact Deleted Successfully");
                }
+               a++;
             });
+    }
+    ContactCount()
+    {
+        const count = this.contacts.reduce((count,sum)=>{
+        return count+1},0);
+        console.log("Total Number of Contact in the Addressbook "+count);
     }
 
 }
@@ -140,7 +148,7 @@ addressbook.addNewContact(Details3);        // Adding a New Contact to addressbo
 addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
 */
 
-addressbook.DeleteContactDetails("John");       // Delete The Contact in the AddressBook.
+addressbook.DeleteContactDetails("Ghejd");       // Delete The Contact in the AddressBook.
 addressbook.displayContactDetails();  //Display the contact in the AddressBook.
-
+addressbook.ContactCount();           //Count the number
 
