@@ -108,6 +108,42 @@ class AddressBook {
         });
         this.displayContactDetails();
     }
+    SortingByCity() 
+    {
+            this.contacts.sort((a,b)=>{
+            let n1 = a.City;
+            let n2 = b.City;
+            if(n1<n2)
+                return -1;
+            else
+                return 1;
+        });
+        this.displayContactDetails();
+    }
+    SortingByState() 
+    {
+            this.contacts.sort((a,b)=>{
+            let n1 = a.State;
+            let n2 = b.State;
+            if(n1<n2)
+                return -1;
+            else
+                return 1;
+        });
+        this.displayContactDetails();
+    }
+    SortingByZip() 
+    {
+            this.contacts.sort((a,b)=>{
+            let n1 = a.Zip;
+            let n2 = b.Zip;
+            if(n1<n2)
+                return -1;
+            else
+                return 1;
+        });
+        this.displayContactDetails();
+    }
 
 }
 function validateDetails(Details) {
@@ -148,7 +184,7 @@ const Details1 = new Contact(
     Address = "Street1",
     City = "Chennai",
     State = "TamilNadu",
-    Zip = "500001",
+    Zip = "600001",
     PhoneNumber = "9987887678",
     Email = "abcd@gmail.com");
 const Details2 = new Contact(
@@ -198,4 +234,7 @@ const UpdatedContact = new Contact(
 //addressbook.CountContactinCity("Chennai");         // No of Person in a Particular City
 //addressbook.CountContactinState("Karnataka");      // No od Person in a Particular State
 
-addressbook.SortingByName();                         //Sort the AddressBook Contact By FirstName.
+//addressbook.SortingByName();                         //Sort the AddressBook Contact By FirstName.
+addressbook.SortingByCity();                         //Sort the AddressBook Contact By City
+addressbook.SortingByState();                        //Sort the AddressBook Contact By State
+addressbook.SortingByZip();                            //Sort the AddressBook Contact By Zi
