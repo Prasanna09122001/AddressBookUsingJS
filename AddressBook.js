@@ -220,21 +220,21 @@ const UpdatedContact = new Contact(
     Zip = "500451",
     PhoneNumber = "6578912388",
     Email = "john@gmail.com");
-//addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
+addressbook.EditContactDetails(UpdatedContact)  //Edit Details of contact in the AddressBook.
 
-//addressbook.DeleteContactDetails("Ghejd");       // Delete The Contact in the AddressBook.
-//addressbook.displayContactDetails();  //Display the contact in the AddressBook.
-//addressbook.ContactCount();           //Count the number
+addressbook.DeleteContactDetails("Ghejd");       // Delete The Contact in the AddressBook.
+addressbook.displayContactDetails();  //Display the contact in the AddressBook.
+addressbook.ContactCount();           //Count the number
 
-//addressbook.duplicateContact(Details3);        // Find Duplicate element in the AddressBook
+addressbook.duplicateContact(Details3);        // Find Duplicate element in the AddressBook
 
-//addressbook.DetailsByCity("Chennai","Abcd");     //Person Details in a Particular City
-//addressbook.DetailsByState("TamilNadu","John");  // Person Details in a Particular State
+addressbook.DetailsByCity("Chennai","Abcd");     //Person Details in a Particular City
+addressbook.DetailsByState("TamilNadu","John");  // Person Details in a Particular State
 
-//addressbook.CountContactinCity("Chennai");         // No of Person in a Particular City
-//addressbook.CountContactinState("Karnataka");      // No od Person in a Particular State
+addressbook.CountContactinCity("Chennai");         // No of Person in a Particular City
+addressbook.CountContactinState("Karnataka");      // No od Person in a Particular State
 
-//addressbook.SortingByName();                         //Sort the AddressBook Contact By FirstName.
+addressbook.SortingByName();                         //Sort the AddressBook Contact By FirstName.
 addressbook.SortingByCity();                         //Sort the AddressBook Contact By City
 addressbook.SortingByState();                        //Sort the AddressBook Contact By State
-addressbook.SortingByZip();                            //Sort the AddressBook Contact By Zi
+addressbook.SortingByZip();                            //Sort the AddressBook Contact By Zip.
