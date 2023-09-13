@@ -15,6 +15,8 @@ class Contact {
 class AddressBook {
     constructor() {
         this.contacts = [];
+        this.cityDetails=[];
+        this.stateDetails=[];
     }
     
     addNewContact(contact) {
@@ -75,8 +77,8 @@ class AddressBook {
     }
     DetailsByCity(city,name)
     {
-        const cityDetails= this.contacts.filter((element)=> element.City == city);
-        const PersoninCity= cityDetails.filter((element) => element.FirstName == name);
+        this.cityDetails= this.contacts.filter((element)=> element.City == city);
+        const PersoninCity= this.cityDetails.filter((element) => element.FirstName == name);
         console.log("The Person Details in the Given City are");
         PersoninCity.forEach(element => {
             console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
@@ -84,12 +86,22 @@ class AddressBook {
     }
     DetailsByState(State,name)
     {
-        const stateDetails = this.contacts.filter((element)=> element.State == State);
-        const PersoninState= stateDetails.filter((element)=>element.FirstName == name);
+        this.stateDetails = this.contacts.filter((element)=> element.State == State);
+        const PersoninState= this.stateDetails.filter((element)=>element.FirstName == name);
         console.log("The Person Details in the given State are");
         PersoninState.forEach(element => {
             console.log("Full Name -->"+element.FirstName +" "+element.LastName+" Phone Number -->"+element.PhoneNumber);
         })
+    }
+    CountContactinCity(city)
+    {
+        this.cityDetails = this.contacts.filter((element)=>element.City == city);
+        console.log("The Total Number of Contact Person in the city are "+this.cityDetails.length);
+    }
+    CountContactinState(state)
+    {
+        this.stateDetails = this.contacts.filter((element)=>element.State == state);
+        console.log("The Total Number of Contact Person in the city are "+this.stateDetails.length);
     }
 
 }
@@ -158,7 +170,7 @@ const Details3 = new Contact(
     FirstName="John",
     LastName= "Peter",
     Address= "Street2",
-    City= "Chennai",
+    City= "Coimbatore",
     State= "TamilNadu",
     Zip= "500451",
     PhoneNumber= "6578912344",
@@ -182,6 +194,9 @@ const UpdatedContact = new Contact(
 
 //addressbook.duplicateContact(Details3);        // Find Duplicate element in the AddressBook
 
-addressbook.DetailsByCity("Chennai","Abcd");     //Person Details in a Particular City
-addressbook.DetailsByState("TamilNadu","John");  // Person Details in a Particular State
+//addressbook.DetailsByCity("Chennai","Abcd");     //Person Details in a Particular City
+//addressbook.DetailsByState("TamilNadu","John");  // Person Details in a Particular State
+
+addressbook.CountContactinCity("Chennai");
+addressbook.CountContactinState("Karnataka");
 
